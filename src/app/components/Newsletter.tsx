@@ -14,7 +14,7 @@ const ComingSoon: React.FC = () => {
     e.preventDefault();
 
     try {
-      setIsSubmitting(true);
+      setIsSubmitting(true); 
       setError(null);
 
       // Send the request to your own API endpoint 
