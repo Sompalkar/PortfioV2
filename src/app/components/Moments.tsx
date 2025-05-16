@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -12,7 +13,7 @@ const Polaroid: React.FC<PolaroidProps> = ({ image, description, alt }) => {
   return (
     <div className="polaroid-card min-w-[200px] sm:min-w-80 bg-white p-2 sm:p-4 pb-4 sm:pb-6 shadow-xl m-2 sm:m-4 transition-transform duration-300 hover:-rotate-2 hover:scale-105 relative before:absolute before:inset-0 before:shadow-md before:content-[''] before:z-[-1]">
       <div className="mb-2 sm:mb-4 h-48 sm:h-80 overflow-hidden">
-        <img
+        <Image
           src={image}
           alt={alt}
           className="w-full h-full object-cover"

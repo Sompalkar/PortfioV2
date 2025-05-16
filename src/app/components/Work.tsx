@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface WorkExperienceProps {
@@ -88,7 +89,7 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       style={{ zIndex: isHovered ? 50 : zIndex }}
     >
-      <img src={src} alt={alt} className="w-full h-full object-contain" />
+      <Image src={src} alt={alt} className="w-full h-full object-contain" />
       {isHovered && (
         <div className="absolute z-50 left-1/2 -translate-x-1/2 -bottom-8 whitespace-nowrap px-2 py-1 text-xs bg-[var(--tooltip)] text-[var(--tooltip-foreground)] rounded shadow-lg">
           {alt.replace(" logo", "")}
@@ -119,14 +120,14 @@ const WorkExperienceItem: React.FC<WorkExperienceProps> = ({
                 rel="noopener noreferrer"
                 className="block w-full h-full"
               >
-                <img
+                <Image
                   src={logo}
                   alt={`${company} logo`}
                   className="w-full h-full rounded-full object-cover border border-[var(--border)]"
                 />
               </a>
             ) : (
-              <img
+              <Image
                 src={logo}
                 alt={`${company} logo`}
                 className="w-full h-full rounded-full object-cover border border-[var(--border)]"

@@ -1,10 +1,11 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 
 interface ProjectProps {
   title: string;
   link: string;
-  logo?: string;
+  logo: string;
   description: string;
   preview?: string;
 }

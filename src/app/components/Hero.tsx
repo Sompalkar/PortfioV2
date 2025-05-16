@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 
 interface LinkWithTooltipProps {
@@ -116,7 +117,7 @@ const LinkWithTooltip: React.FC<LinkWithTooltipProps> = ({
         >
           {imageUrl && (
             <div className="w-full h-40 overflow-hidden rounded mb-2">
-              <img
+              <Image
                 src={imageUrl}
                 alt="tooltip illustration"
                 className="w-full h-full object-cover"
@@ -205,7 +206,7 @@ const SongLink: React.FC<SongLinkProps> = ({ title, artist, href }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative mr-1">
-        <img
+        <Image
           src="/cd.png"
           alt="CD icon"
           className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${

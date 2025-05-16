@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 // Create an API route handler in your Next.js app
@@ -45,6 +46,7 @@ const ComingSoon: React.FC = () => {
       }, 3000);
 
     } catch (err) {
+      console.log(err)
       // console.error("Subscription error:", err);
       // setError(
       //   err instanceof Error
@@ -61,7 +63,7 @@ const ComingSoon: React.FC = () => {
     
       <div className="relative w-full max-w-3xl mx-auto mb-10">
         <div className="overflow-hidden">
-          <img src="/heading.png" alt="Love" className="w-2/3 mx-auto" />
+          <Image src="/heading.png" alt="Love" className="w-2/3 mx-auto" />
         </div>
       </div>
  

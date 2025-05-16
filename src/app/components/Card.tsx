@@ -36,7 +36,10 @@ if (PreloadURL) {
 useTexture.preload("/somBand.png");
 
 // type declarations for the extended components
+
+ 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     interface IntrinsicElements {
       meshLineGeometry: React.ComponentProps<"mesh">;
