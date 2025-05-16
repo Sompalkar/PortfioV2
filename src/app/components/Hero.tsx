@@ -273,13 +273,13 @@ const Hero: React.FC = () => {
         </p>
 
         <p className="mb-4 text-base text-[var(--foreground)]">
-          also vibe coding with Solana {" "}
+          also vibe coding with Typescript {" "}
           <LinkWithTooltip
-            text="solana"
+            text="Typescript"
             description={
               <div className="space-y-2">
                 <p> building projects using
-                  Solana blockchain technology.
+                  Typescript.
                 </p>
                 <div className="mt-2 pt-2 border-t border-[var(--tooltip-border)]">
                   <div className="font-medium mb-1">Projects:</div>

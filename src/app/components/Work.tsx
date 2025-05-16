@@ -1,5 +1,4 @@
-"use client";
-import Image from "next/image";
+"use client"; 
 import React, { useState } from "react";
 
 interface WorkExperienceProps {
@@ -89,7 +88,8 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       style={{ zIndex: isHovered ? 50 : zIndex }}
     >
-      <Image src={src} alt={alt} className="w-full h-full object-contain" />
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <img src={src} alt={alt} className="w-full h-full object-contain" />
       {isHovered && (
         <div className="absolute z-50 left-1/2 -translate-x-1/2 -bottom-8 whitespace-nowrap px-2 py-1 text-xs bg-[var(--tooltip)] text-[var(--tooltip-foreground)] rounded shadow-lg">
           {alt.replace(" logo", "")}
@@ -120,14 +120,16 @@ const WorkExperienceItem: React.FC<WorkExperienceProps> = ({
                 rel="noopener noreferrer"
                 className="block w-full h-full"
               >
-                <Image
+                   {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                <img
                   src={logo}
                   alt={`${company} logo`}
                   className="w-full h-full rounded-full object-cover border border-[var(--border)]"
                 />
               </a>
             ) : (
-              <Image
+                                 
+              <img
                 src={logo}
                 alt={`${company} logo`}
                 className="w-full h-full rounded-full object-cover border border-[var(--border)]"
@@ -175,12 +177,10 @@ const WorkExperienceItem: React.FC<WorkExperienceProps> = ({
 const CollaborationLogos: React.FC = () => {
 
   // Company data structured in an array for better maintainability
-
-
   const companies = [
     {
       name: "Accenture",
-      logo: "/companies/Accenture.png",
+      logo: "https://logos-world.net/wp-content/uploads/2020/06/Accenture-Emblem-700x394.png",
       website: "https://Accenture.com/",
       zIndex: 40,
     },
@@ -196,7 +196,7 @@ const CollaborationLogos: React.FC = () => {
         also worked with folks at
       </p>
       <div className="flex items-center">
-        <div className="relative flex">
+        <div className="relative flex ">
           {companies.map((company) => (
             <CompanyLogo
               key={company.name}
@@ -222,7 +222,7 @@ const Work: React.FC = () => {
     {
       company: "Accenture",
       position: "Software Engineer",
-      logo: "/companies/accenture.png",
+      logo: "https://logos-world.net/wp-content/uploads/2020/06/Accenture-Emblem-700x394.png",
       website: "https://www.accenture.com/",
       description: [
         <>

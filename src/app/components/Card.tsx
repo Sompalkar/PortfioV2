@@ -28,8 +28,24 @@ import { Vector3 } from "three";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 
-const PreloadURL = process.env.PRELOAD_URL;
 
+
+// const GLTF_URL = "https://res.cloudinary.com/som/image/upload/v1747388448/md.glb";
+
+
+
+const GLTF_URL = "http://localhost:3000/som.glb";
+
+
+const TEXTURE_URL = "https://res.cloudinary.com/sommmmn/image/upload/v1747389823/dqhh6qjac2wtgn6mu8q6.png";
+
+
+
+
+
+
+
+const PreloadURL = process.env.PRELOAD_URL;
 if (PreloadURL) {
   useGLTF.preload(PreloadURL);
 }
@@ -172,18 +188,10 @@ function Band({
   } as const;
 
   // First cast to unknown, then to CustomGLTFResult to avoid TypeScript casting errors
-  const gltf = useGLTF(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/som.glb"
-      : `${process.env.FRONTEND_URL}/som.glb`
-  );
+  const gltf = useGLTF(GLTF_URL );
   const { nodes, materials } = gltf as unknown as CustomGLTFResult;
 
-  const texture = useTexture(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/somBand.png"
-      : ` ${process.env.FRONTEND_URL}/somBand.glb`
-  );
+  const texture = useTexture(TEXTURE_URL);
 
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
