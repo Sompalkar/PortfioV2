@@ -28,9 +28,11 @@ import { Vector3 } from "three";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 
-const PreloadURL: any =process.env.PRELOAD_URL
+const PreloadURL = process.env.PRELOAD_URL;
 
-useGLTF.preload(PreloadURL);
+if (PreloadURL) {
+  useGLTF.preload(PreloadURL);
+}
 useTexture.preload("/somBand.png");
 
 // type declarations for the extended components
