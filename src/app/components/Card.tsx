@@ -34,7 +34,7 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 
 
 
-const GLTF_URL = "http://localhost:3000/som.glb";
+const GLTF_URL = "https://portfio-v2.vercel.app/som.glb";
 
 
 const TEXTURE_URL = "https://res.cloudinary.com/sommmmn/image/upload/v1747389823/dqhh6qjac2wtgn6mu8q6.png";
