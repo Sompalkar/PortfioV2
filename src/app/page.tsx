@@ -16,12 +16,12 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
+  const [showMobileBanner, setShowMobileBanner] = useState(false);
 
   // Calculate and update the card height based on content
 
   useEffect(() => {
     const calculateHeight = () => {
-
       // Wait for DOM to be fully rendered
 
       setTimeout(() => {
@@ -31,7 +31,6 @@ export default function Home() {
           projectsRef.current &&
           workRef.current
         ) {
-
           // top position of header
 
           const headerTop =
@@ -42,7 +41,6 @@ export default function Home() {
           const workBottom =
             workRef.current.getBoundingClientRect().bottom + window.scrollY;
 
-
           // Calculate total height from header to work section
 
           const totalHeight = workBottom - headerTop;
@@ -50,7 +48,6 @@ export default function Home() {
           // Set card height
 
           setCardHeight(`${totalHeight + 30}px`);
-
         }
       }, 100);
     };
@@ -65,8 +62,30 @@ export default function Home() {
     return () => window.removeEventListener("resize", calculateHeight);
   }, []);
 
+  // Mobile banner logic
+  useEffect(() => {
+    const isSmallScreen = window.innerWidth < 768;
+    if (isSmallScreen) {
+      setShowMobileBanner(true);
+      const timer = setTimeout(() => setShowMobileBanner(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
-    <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
+    <ThemeProvider defaultTheme="system" storageKey="som-theme">
+      {showMobileBanner && (
+        <div className="fixed top-0 left-0 w-full rounded-2xl z-[9999] bg-yellow-100 border-b border-yellow-400 text-black text-center p-2 font-medium shadow-md flex items-center justify-center gap-4 pointer-events-auto">
+          ⚠️ For the best experience, please visit from a desktop.
+          <button
+            onClick={() => setShowMobileBanner(false)}
+            className="text-xl font-bold text-cyan-500 hover:text-yellow-600"
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       <div className="min-h-screen p-0 font-[family-name:var(--font-geist-sans)]">
         <div
           className="card-wrapper mr-10 hidden lg:block"
@@ -78,7 +97,6 @@ export default function Home() {
         {/* Main content area */}
 
         <div className="relative">
-          
           {/* Header with higher z-index to appear above card */}
 
           <header className="relative z-20 " ref={headerRef}>

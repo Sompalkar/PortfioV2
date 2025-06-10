@@ -29,8 +29,7 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 
 
 
-
-// const GLTF_URL = "https://res.cloudinary.com/som/image/upload/v1747388448/md.glb";
+ 
 
 
 

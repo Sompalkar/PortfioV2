@@ -63,7 +63,7 @@ const ComingSoon: React.FC = () => {
     
       <div className="relative w-full max-w-3xl mx-auto mb-10">
         <div className="overflow-hidden">
-          <Image src="/heading.png" alt="Love" className="w-2/3 mx-auto" />
+          <img src="/heading.png" alt="Love" className="w-2/3 mx-auto" />
         </div>
       </div>
  

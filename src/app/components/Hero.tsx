@@ -295,7 +295,7 @@ const Hero: React.FC = () => {
                   />
                   <ProjectLink
                     href="https://github.com/Sompalkar/TinyContract"
-                    name="cNFT"
+                    name="Tiny Contracts"
                     description="Tiny contract - contract for anything"
                   />
                 </div>
