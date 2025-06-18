@@ -226,36 +226,45 @@ const Work: React.FC = () => {
       website: "https://www.accenture.com/",
       description: [
         <>
-          Built RESTful microservices in Node.js & TypeScript with Express and PostgreSQL {" "}
+          Developed high-performance microservices using Node.js, TypeScript, and PostgreSQL, {" "}
           <LinkWithTooltip
             href="https://github.com/sompalkar/"
-            text=" service PR "
+            text="MicroServices"
           />
-           {" "} boosting throughput by 35%.
+           {" "} boosting backend throughput by 35%.
         </>,
         <>
-          Integrated OAuth2 & JWT auth flows {"  "}{" "}  
+           Built fast, responsive UIs using React, Next.js, TypeScript, Recoil, Redux, and TailwindCSS,{"  "}{" "}  
           <LinkWithTooltip
-            href="https://github.com/sompalkar/accenture-auth/"
-            text=" auth PR "
+            href="https://github.com/sompalkar/CloudWise"
+            text="UI/UX"
           />
+          {" "}  improving UX across multiple platforms.
           
         </>,
         <>
-          Streamlined deployments via Jenkins CI/CD {" "}{" "}
+          Reduced release cycle time by 40% by automating CI/CD with Docker, multi-stage builds,{" "}{" "}
           <LinkWithTooltip
-            href="https://github.com/sompalkar/accenture-ci/"
-            text=" pipeline PR "
+            href="https://github.com/sompalkar/"
+            text="CI/CD"
           />
-          {" "} slashing release time 40%.
+          {" "} and Jenkins pipelines.
         </>,
         <>
-          Automated scaling Using Kubernetes , Ansible , CloudWatch for cost optimization , Handled On Premise Server On VCENTER {" "}
+          Deployed caching and real-time data delivery using Redis (Pub/Sub + caching),{" "}
           <LinkWithTooltip
             href="https://github.com/sompalkar/accenture-cloud/"
+            text="Chaching"
+          />
+          {" "} cutting load times for key features by up to 30%.
+        </>,
+        <>
+          Automated infrastructure using Ansible and Kubernetes, {" "}
+          <LinkWithTooltip
+            href="https://github.com/sompalkar/"
             text=" infra PR "
           />
-          {" "} reducing spend by 25%.
+          {" "} while managing on-premise servers via vCenter, resulting in 25% cost optimization.
         </>,
       ],
     },

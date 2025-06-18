@@ -91,7 +91,7 @@ export default function Home() {
           className="card-wrapper mr-10 hidden lg:block"
           style={{ height: cardHeight, position: "absolute", top: 0, right: 0 }}
         >
-          <Card />
+          {/* <Card /> */}
         </div>
 
         {/* Main content area */}
